@@ -5,14 +5,14 @@ const user = { name: "age", age: 20};
 const jsonUser = JSON.stringify(user);
 
 console.log(typeof jsonUser); // string
-console.log(jsonUser); 
+console.log(jsonUser); // {"name":"age","age":20}
 
 const parseUser = JSON.parse(jsonUser);
-console.log(typeof parseUser);
-console.log(parseUser);
+console.log(typeof parseUser); // object
+console.log(parseUser); // { name: 'age', age: 20 }
 
 const jsonStr = JSON.stringify(10);
 const parseJson = JSON.parse(jsonStr);
-console.log(typeof jsonStr);
-console.log(typeof parseJson);
-console.log(parseJson);
+console.log(typeof jsonStr); // string
+console.log(typeof parseJson); // number
+console.log(parseJson); // 10 

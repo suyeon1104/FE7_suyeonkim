@@ -27,6 +27,8 @@ Rectangle.prototype.getArea = function () {
     return this.width * this.height;
 };
 const rect1 = new Rectangle("blue", 10, 20);
-console.log(rect1.getColor());
-console.log(rect1);
-console.log(Shape.prototype.constructor);
+console.log(rect1.getColor()); // 'blue'
+console.log(rect1); // Rectangle { color: 'blue', width: 10, height: 20 }
+
+console.log(Shape.prototype.constructor); // [Function: Shape]
+console.log(Rectangle); // [Function: Rectangle]

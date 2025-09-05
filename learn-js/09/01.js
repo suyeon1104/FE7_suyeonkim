@@ -263,3 +263,6 @@ console.log(dev1.__proto__.constructor.name); // Developer
 console.log(Object.keys(dev1.__proto__)); // [ 'num2', 'constructor' ]
 
 console.log(dev1.__proto__ === Developer.prototype); // true
+console.log(dev1.__proto__.__proto__ === Developer.prototype.__proto__); // true
+console.log(Developer.prototype.__proto__ === Person.prototype); // true
+console.log(dev1.__proto__.__proto__ === Person.prototype); // true

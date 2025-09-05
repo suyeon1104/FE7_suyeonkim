@@ -2,12 +2,12 @@
 class Account {
     #balance = 0;
     deposit(amount) {
-        if (typeof amount !== number || amount <= 0)
+        if (typeof amount !== "number" || amount <= 0)
             throw new Error("Invalid");
         this.#balance += amount;
     }
     withdraw(amount) {
-        if (typeof amount !== number || amount <= 0)
+        if (typeof amount !== "number" || amount <= 0 || this.#balance - amount < 0)
             throw new Error("Invalid");
         this.#balance -= amount;
     }
@@ -36,7 +36,7 @@ class Car extends Vehicle {
         this.brand = brand;
     }
     info() {
-        return `브랜드 ${this.brand}, 차량: ${this.name}`;
+        return `브랜드: ${this.brand}, 차량: ${this.name}`;
     }
 }
 const v = new Vehicle("스쿠터");

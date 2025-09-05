@@ -52,7 +52,7 @@ function userInfo({name = "kim", age = 20}) {
     console.log(name, age);
 }
 
-userInfo();
+userInfo({});
 
 function sum (a = 10, b = 20) {
     return a + b;

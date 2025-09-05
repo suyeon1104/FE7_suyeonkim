@@ -1,4 +1,4 @@
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve,))
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 const getSunIcon = async () => {
     await delay(1000);
     return "sun";
@@ -17,7 +17,7 @@ const getAllWeatherIcons = () => {
     getSunIcon().then((sun) => {
         return getWaveIcon().then(wave => {
             return getCloudIcon().then(cloud => {
-                console.log(sun, wave, cloud);
+                console.log(1, sun, wave, cloud);
             });
         });
     })
@@ -25,7 +25,7 @@ const getAllWeatherIcons = () => {
 
 // 병렬로
 const getAllWeatherIconAsync = async () => {
-    console.time();
+    console.time(1);
 
     const sunPromsie = getSunIcon();
     const wavePromsie = getWaveIcon();
@@ -34,20 +34,20 @@ const getAllWeatherIconAsync = async () => {
     const sun = await sunPromsie; // 1s
     const wave = await wavePromsie; // 1s
     const cloud = await cloudPromsie; // 1s
-    console.log(sun, wave, cloud);
-    console.timeEnd();
+    console.log(2, sun, wave, cloud);
+    console.timeEnd(1);
 };
 getAllWeatherIcons();
 console.log("hello");
 
 
 const getAllWeatherIconAsyncs = async () => {
-    console.time();
+    console.time(2);
     const [sun, wave, cloud] = await Promise.allSettled([ // all race allSettled
         getSunIcon(), getWaveIcon(), getCloudIcon(),
     ]);
-    console.log(sun, wave, cloud);
-    console.timeEnd();
+    console.log(3, sun, wave, cloud);
+    console.timeEnd(2);
 };
 getAllWeatherIconAsync();
 getAllWeatherIconAsyncs();

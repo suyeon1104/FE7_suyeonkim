@@ -45,7 +45,7 @@ console.log(window.location);
 // console.log(confirms);
 // const name = window.prompt("1 ~ 100 숫자 입력하세요");
 // console.log(typeof name);
-// 모든 widnow 객체 메서드드는 window. 생략 가능
+// 모든 widnow 객체 메서드는 window. 생략 가능
 
 const timeout = window.setTimeout(() => {
 console.log("setTimeout")

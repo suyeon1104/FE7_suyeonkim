@@ -8,7 +8,7 @@ class Person {
     
     // static method (정적 메서드)
     static greet() {
-        // name은 class의 hidden 속성성
+        // name은 class의 hidden 속성
         return `Hello, ${this.name}`;
     }
 }
@@ -18,6 +18,6 @@ class Person {
 // }
 
 const p1 = new Person("kim", 20);
-console.dir(Person);
-console.log(Person.APP_NAME);
-console.log(Person.greet());
+console.dir(Person); // [class Person] { APP_NAME: 'Person Android' }
+console.log(Person.APP_NAME); // Person Android
+console.log(Person.greet()); // Hello, Person

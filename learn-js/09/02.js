@@ -16,5 +16,5 @@ Car.prototype.getInfo = function() {
     return `${this.type}, ${this.brand}`;
 }
 const car1 = new Car("BMW");
-console.log(car1.info());
-console.log(car1.getInfo());
+console.log(car1.info()); // car vehicle
+console.log(car1.getInfo()); // car, BMW

@@ -10,6 +10,8 @@ const person = {
 }
 person.fullName = "min park";
 console.log(person.fullName);
+console.log(person.firstName);
+console.log(person.lastName);
 
 const Roles = {
     ADMIN: "admin",
@@ -17,7 +19,20 @@ const Roles = {
     GUEST: "guest",
 }
 
-const config = Object.freeze({
+// const config = Object.freeze({
+//     apiUrl: "http://localhost: 3000",
+//     timeout: 3000,
+// });
+
+const obj = {
     apiUrl: "http://localhost: 3000",
     timeout: 3000,
-});
+};
+
+const config = Object.freeze(obj);
+
+config.timeout = 1500;
+console.log(config); // timeout 안 바뀜
+obj.timeout = 1500;
+console.log(obj); // // timeout 안 바
+

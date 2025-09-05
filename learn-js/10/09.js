@@ -22,5 +22,5 @@ class Dog extends Animal {
 }
 
 const dg1 = new Dog("퍼피");
-console.log(dg1.speak());
-console.log(dg1.bark());
+console.log(dg1.speak()); // 퍼피이(가) 소리를 엄청 크게 냅니다.
+console.log(dg1.bark()); // 퍼피이 짖습니다

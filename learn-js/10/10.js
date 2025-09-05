@@ -13,3 +13,5 @@ const p = new Person("kim", 20);
 console.log(String(p));
 console.log(p.toString());
 console.dir(p);
+console.log(p);
+console.log(p + "");

@@ -60,4 +60,4 @@
 // 1.1 객체의 불변성
 // 1.10.1 Object.freeze() <-> Object.isFrozen() 완전 동결
 // 1.10.2 Object.seal() -> Object.isSealed() 추가 삭제 동결
-// 1.10.3 Object.preventExtensions() <-> Object.isExtensible() 추가 동결결
+// 1.10.3 Object.preventExtensions() <-> Object.isExtensible() 추가 동결

@@ -24,12 +24,12 @@ class Rectangle extends Shape {
     }
 }
 const rect1 = new Rectangle("blue", 10, 20);
-console.dir(rect1.getColor());
-console.log(rect1.getArea());
-console.dir(rect1);
-console.log(rect1.constructor);
-console.log(rect1.constructor.name);
-console.log(Reflect.ownKeys(rect1));
-console.log(Reflect.ownKeys(rect1.__proto__));
-console.log(Reflect.ownKeys(rect1.__proto__.__proto__));
-console.log(rect1.__proto__.constructor);
+console.dir(rect1.getColor()); // 'blue'
+console.log(rect1.getArea()); // 200
+console.dir(rect1); // Rectangle { color: 'blue', width: 10, height: 20 }
+console.log(rect1.constructor); // [class Rectangle extends Shape]
+console.log(rect1.constructor.name); // Rectangle
+console.log(Reflect.ownKeys(rect1)); // [ 'color', 'width', 'height' ]
+console.log(Reflect.ownKeys(rect1.__proto__)); // [ 'constructor', 'getArea' ]
+console.log(Reflect.ownKeys(rect1.__proto__.__proto__)); // [ 'constructor', 'getColor' ]
+console.log(rect1.__proto__.constructor); // [class Rectangle extends Shape]

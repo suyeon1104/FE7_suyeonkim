@@ -10,16 +10,20 @@
 const num2 = 10;
 const numFromObj = new Number(10);
 console.log(num2, numFromObj); // 10 [Number: 10]
-console.log(typeof numFromObj); // Object
+console.log(typeof numFromObj); // object
+console.log(numFromObj + numFromObj);
 
 const str = "A";
-const strFromObj = new String("A");
+const strFromObj = new String(str);
 
 console.log(str == strFromObj); // true
 console.log(str === strFromObj); // false
 
 const bool = true;
 const boolFromBoolean = new Boolean(true);
+
+const arr = new Array(10, "A"); // [10, "A"]
+console.log(arr);
 
 // null -> x
 // undefined -> x
@@ -32,12 +36,13 @@ console.log(num.toFixed(1));
 console.log(new Number(10).toFixed(1));
 console.log(num.ddd);
 
-const abc = "a.b.c"; // 기본 자료형을 래퍼 객체로 감싸서 인스턴스 객체처럼 사용할 수 있게 해줌줌
+const abc = "a.b.c"; // 기본 자료형을 래퍼 객체로 감싸서 인스턴스 객체처럼 사용할 수 있게 해줌
 console.log(abc.split("."));
 
-
 // 표준 내장 객체
-// Numnber, String, Boolean -> 생성자 함수처럼 사용할 수 있음
-// Math, Date -> 생성자 함수처럼 사용할 수 있음
+// Number, String, Boolean -> 생성자 함수처럼 사용할 수 있음 (생성자 함수 객체)
+// Math, Date -> 생성자 함수처럼 사용할 수 없음 (유틸리티 객체)
 
 
+function f () {};
+console.log(f.prototype.constructor);

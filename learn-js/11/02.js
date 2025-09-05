@@ -9,6 +9,9 @@ const obj = {
 
 // 1.2 Object 생성자 함수
 const obj2 = new Object();
+console.log(Reflect.ownKeys(obj2.__proto__));
+console.log(obj2.__proto__.__proto__); // nulll
+
 
 // 1.3 생성자 함수(class)
 function Person(name) {
@@ -17,7 +20,10 @@ function Person(name) {
 const obj3 = new Person("kim");
 
 // 1.4 Object.create()
-const obj4 = Object.create();
+const obj4 = Object.create({});
+console.log(Reflect.ownKeys(obj4.__proto__.__proto__));
+const obj4_2 = Object.create(Object.prototype);
+console.log(Reflect.ownKeys(obj4_2.__proto__));
 
 // 2. 프로퍼티 접근과 조작
 const user = {
@@ -73,9 +79,10 @@ const objects = {
         console.log(`Hello, ${this.name}`);
     }
 }
-objects.main();
-console.log(objects);
-objects.greet();
+objects.main(); // { name: 'park', main: [Function: main], greet: [Function: greet] }
+main.call(objects);
+console.log(objects); // { name: 'park', main: [Function: main], greet: [Function: greet] }
+objects.greet(); // Hello, park Hello, park;
 
 const calculator = {
     subtract: function (a, b) {
@@ -104,19 +111,24 @@ for(const key in person) {
 // [].forEach();
 ["a", "b", "c"].forEach((v) => console.log(v));
 // Object.keys()
-console.log(Object.keys(person));
+console.log(Object.keys(person)); // [ 'name', 'age', 'job' ]
 Object.keys(person).forEach((key) => {
-    console.log(person[key]);
+    console.log(person[key]); // kim 20 developer
 })
 
 // Object.entries()
-console.log(Object.entries(person));
+console.log(Object.entries(person)); // [ [ 'name', 'kim' ], [ 'age', 20 ], [ 'job', 'developer' ] ]
 const arr = ["apple", "banana"];
 const [a, b] = arr;
+console.log(a, b);
 Object.entries(person).forEach(([key, value]) => {
     console.log(key, value);
 })
 
 // Object.values()
 Object.values(person).forEach((v) => console.log(v));
-console.log(Object.values(person));
+console.log(Object.values(person)); // [ 'kim', 20, 'developer' ]
+
+console.log(typeof Object.keys(person)); // Object
+console.log(typeof Object.values(person)); // Object
+console.log(typeof Object.entries(person)); // Object

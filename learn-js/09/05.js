@@ -9,7 +9,7 @@ Person.prototype.greet = function () {
 };
 
 const john = new Person("John");
-john.greet();
+john.greet(); // Hello, my name is John
 
 // 2
 function Car(brand) {

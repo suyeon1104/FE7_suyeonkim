@@ -17,7 +17,7 @@ function Counter(count = 0) {
 const ct = new Counter(0);
 ct.increment();
 ct.decrement();
-console.log(ct.getCount());
+console.log(ct.getCount()); // 0
 
 ct.count = 100;
-console.log(ct.getCount);
+console.log(ct.getCount()); // 100
