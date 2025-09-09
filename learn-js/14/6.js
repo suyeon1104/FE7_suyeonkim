@@ -17,13 +17,17 @@ console.log(/abc/.test("123abd1234")); // false
 
 // .match()
 // 패턴과 매칭되는 문자열들을 배열로 반환
-console.log("123abcd1234".match(/ab/g));
+console.log("123abcd1234".match(/ab/g)); // [ 'ab' ]
+console.log("123abcdab1234".match(/ab/g)); // [ 'ab', 'ab' ]
 
-// 글로벌 태그(g)가 없으면 가장 먼저 매칭되는 문자열 반환함함
-console.log("123abcd1234".match(/ab/));
+// 글로벌 태그(g)가 없으면 가장 먼저 매칭되는 문자열 반환함
+console.log("123abcd1234".match(/ab/)); // [ 'ab', index: 3, input: '123abcd1234', groups: undefined ]
 
 // 전부 다 숫자인지 확인하는 코드
-console.log(/^\d+$/g.test("12345"));
+console.log(/^\d+$/g.test("12345")); // true
+console.log("12abcadc34".match(/a.c/g))
+console.log("12abcadc34".match(/(a.c){2}/g))
+console.log("12abcadc34".match(/(a.c){2}/))
 
 // 문자 클래스
 // . \d \w \s

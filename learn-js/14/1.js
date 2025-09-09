@@ -30,3 +30,14 @@ console.log(users); // { name: 'kim' }
 const id2 = Symbol("id");
 console.log(id2);
 console.log(id === id2); // false
+console.log(id == id2); // false
+
+const id3 = Symbol.for("id");
+console.log(id3);
+console.log(id == id3);
+console.log(id2 == id3);
+
+const id4 = Symbol.for("id");
+console.log(id4);
+console.log(id == id4); // false
+console.log(id3 == id4); // true

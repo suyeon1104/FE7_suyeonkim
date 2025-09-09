@@ -32,8 +32,7 @@ console.log(result);
 
 
 {
-    // let const
-    let srg: string = "hello";
+    let str: string = "hello";
 }
 
 // 2. 참조 자료형
@@ -85,12 +84,17 @@ console.log(result);
         [["a", "b"], [1]],
         [["d", "e"], [2]],
     ];
+    const blocks3: [string[], number[]] [] = [
+        [["a", "b"], [1]],
+        [["d", "e"], [2]],
+    ];
 }
 
 // 객체
 
 {
     const obj: {} = {}; // Record<string, never>
+    const obj2: Record<string, never> = {}; 
     const user: {
         name: string;
         age: number;

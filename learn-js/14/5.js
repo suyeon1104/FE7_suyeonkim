@@ -3,10 +3,12 @@
 // asia/seoul UTC+9
 
 const now1 = new Date("2025-08-25T03:24:00");
+const now1_2 = new Date("2025-08-25T03:24:00Z");
 const now2 = new Date(2025, 8, 2, 10, 30, 0); // 0 -> 1월, 8 -> 9월
 const now3 = new Date("2025-09-02 14:00:00");
 
 console.log(now1);
+console.log(now1_2)
 console.log(now2);
 console.log(now3);
 
@@ -39,8 +41,8 @@ console.log(now);
 
 
 // 날짜를 형식화 (포맷팅)
-console.log(now.toDateString());
-console.log(now.toLocaleDateString()); // 거주지역의 날짜 포맷팅에 맞게 변경해줌
+console.log(now.toDateString()); // Sat Aug 01 2026
+console.log(now.toLocaleDateString()); // 2026. 8. 1. // 거주지역의 날짜 포맷팅에 맞게 변경해줌 
 
 
 // 옵션을 사용한 예제
@@ -55,11 +57,12 @@ const options = {
     timeZoneName: 'short'
 };
 
-console.log(now.toLocaleString('ko-KR', options)); // "수요일, 2024년 10월 30일 12:34:56 KST"
-console.log(now.toLocaleString('en-US', options)); // "Wednesday, October 30, 2024, 12:34:56 PM GMT+9"
+console.log(now.toLocaleString('ko-KR', options)); // 2026년 8월 01일 토요일 오후 12시 12분 12초 GMT+9
+console.log(now.toLocaleString('en-US', options)); // Saturday, August 01, 2026 at 12:12:12 PM GMT+9
 
-console.log(now.toLocaleString('ko-KR', { month: "long" })); // 옵션은 객체로써 따로 설정 가능
-console.log(now.toLocaleString('en-US', { month: "narrow" }));
+console.log(now.toLocaleString('ko-KR', { month: "long" })); // 8월. 옵션은 객체로써 따로 설정 가능
+console.log(now.toLocaleString('en-US', { month: "narrow" })); // A
+console.log(now.toLocaleString('en-US', { month: "short" })); // Aug
 
 // 날짜와 날짜 사이의 간격
 // const startDate = new Date();
@@ -72,3 +75,5 @@ const diffDays = datediff / (1000 * 60 * 60 * 24);
 console.log(diffDays); // 122일
 
 console.log(now.getTime());
+console.log(startDate);
+console.log(endDate);

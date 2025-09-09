@@ -3,8 +3,8 @@
 // 자바스크립트의 객체(Object)와 비슷해 보이지만, 다음과 같은 차이점이 있음.
 // 1. Object 객체의 키로 문자열이나 심볼만 사용 가능
 // 1.1 맵 객체는 모든 값을 키로 사용 가능함
-// 2. 삽입 순서를 그대로 유지
-// 3. .size 속성도 제공함
+// 1.2. 삽입 순서를 그대로 유지
+// 1.3. .size 속성도 제공함
 
 // 2. map 객체
 // 2.1 set(key, value) -> 값을 세팅함
@@ -33,6 +33,7 @@ map.set(user, 1);
 map.set(copyUser, 1);
 // map.set(1, "age");
 // map.set(true, "1");
+console.log(map);
 
 for (const key of map.keys()) {
     console.log(`key: ${key}, value: ${map.get(key)}`);
@@ -50,18 +51,40 @@ map.forEach((value, key, map) => {
     console.log(value);
     console.log(key);
     console.log(map);
-
 });
 
 
-console.log(map); // Map(3) { 'name' => 'kim', { name: 'kim' } => 1, { name: 'kim' } => 1 }
-// 같은 키의 값은 하나로 고유해야 함
+console.log(map); // Map(4) { 'name' => 'kim', 'age' => 20, { name: 'kim' } => 1, { name: 'kim' } => 1 }
+// 같은 키의 값은 하나로 공유해야 함
 console.log(map.get(user)); // 1
 
 console.log(map.has(user)); // true
-console.log(Object.hasOwn(map, "name"));
+console.log(Object.hasOwn(map, "name")); // false
 
 map.delete("name");
-console.log(map);
-console.log(map.size);
+console.log(map); // Map(3) { 'age' => 20, { name: 'kim' } => 1, { name: 'kim' } => 1 }
+console.log(map.size); // 3
 
+map.clear();
+console.log(map); // Map(0) {}
+
+console.log(Reflect.ownKeys(map)); // []
+
+console.log(map.__proto__); // Object [Map] {}
+
+console.log(Reflect.ownKeys(map.__proto__));
+// //[
+//     'constructor',
+//     'get',
+//     'set',
+//     'has',
+//     'delete',
+//     'clear',
+//     'entries',
+//     'forEach',
+//     'keys',
+//     'size',
+//     'values',
+//     Symbol(Symbol.toStringTag),
+//     Symbol(Symbol.iterator)
+//   ]

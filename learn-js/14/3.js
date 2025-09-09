@@ -19,19 +19,18 @@ set.add(user);
 set.delete(1);
 
 for (const value of set) {
-    console.log(value);
+    console.log(value); // 2, 3, kim, {}, {name: "kim"}
 }
 
-console.log(set);
+console.log(set); // Set(5) { 2, 3, 'kim', {}, { name: 'kim' } }
 console.log(set.has(1)); // false
 console.log(set.has(2)); // true
 
 set.clear();
-console.log(set);
-console.log(set.size);
+console.log(set); // Set(0) {}
+console.log(set.size); // 0
 
 // 중복된 값 제거
 const numArr = [1, 2, 1, 2, 3];
 const copyNumArr = [...new Set(numArr)];
-console.log(copyNumArr);
-
+console.log(copyNumArr); // [ 1, 2, 3 ]
