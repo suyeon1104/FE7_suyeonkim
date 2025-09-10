@@ -96,8 +96,11 @@
         city: string;
         zipcode: number;
     }
-    type PersonAndAddress = Person & Address;
-    const paa: PersonAndAddress = {
+    type Contact = Person & Address;
+    // interface Contact extends Person, Address {};
+    // 또다른 풀이
+
+    const paa: Contact = {
         name: "kim",
         age: 24,
         street: "guro",
