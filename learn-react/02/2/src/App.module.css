@@ -1,0 +1,8 @@
+h1 {
+    font-style: italic;
+}
+
+.red_c {
+    color: red;
+    text-decoration: line-through;
+}
