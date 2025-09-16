@@ -28,6 +28,9 @@ console.log(result);
     console.log(typeof nul);
     console.log(typeof sym);
     console.log(typeof big);
+
+    let num2: number | null = 10;
+    num2 = null;
 }
 
 
@@ -88,6 +91,8 @@ console.log(result);
         [["a", "b"], [1]],
         [["d", "e"], [2]],
     ];
+    console.log(blocks2);
+    console.log(blocks3);
 }
 
 // 객체

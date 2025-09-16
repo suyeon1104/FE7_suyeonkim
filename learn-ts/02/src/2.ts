@@ -5,7 +5,7 @@
 // never
 
 {
-    // 함수 선언문
+    // 함수 정의문
     function sum(n1: number, n2: number) : number {
         return n1 + n2;
     }

@@ -23,6 +23,8 @@
     // user.age = 30;
 
     const numArr: readonly number[] = [1, 2, 3];
+    // numArr[0] = 2;
+    // numArr.push(5);
     const mixArr: readonly [number, string] = [10, "A"];
 }
 
@@ -53,6 +55,15 @@
     const add: {
         (a: number, b: number): number;
     } = (a, b) => a + b;
+
+    let add2: {
+        (a: number, b: number): number;
+        p: number;
+    };
+    
+    let f = (a: number , b: number): number => a + b;
+    f.p = 3;
+
 
     const adds : (a: number, b: number) => number = (a, b) => a + b;
 }
